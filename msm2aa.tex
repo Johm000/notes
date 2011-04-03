@@ -131,7 +131,31 @@
 	$\mathbf{r}(t)$ is a mapping on the interval $[a,b]$ on the t-axis to the curbe in xyz-space.
 	
 	\subsection{Tangent vector of a curve}
-
+	For a curve represented in parametric form (see above), for each $t$ there is a point $\mathbf{r}(t)$ on the curve. The tangent
+	vector of the curve can be found by
+	\begin{align*}
+		\frac{d\mathbf{r}}{dt}& = \lim_{\Delta t \to 0} \frac{\mathbf{r}(t+\Delta t) - \mathbf{r}(t)}{\Delta t} \\
+						& = \lim_{\Delta t \to 0} \frac{x(t+\Delta t) - x(t)}{\Delta t} \mathbf{i} + 
+							  \lim_{\Delta t \to 0} \frac{y(t+\Delta t) - y(t)}{\Delta t} \mathbf{j} + 
+							  \lim_{\Delta t \to 0} \frac{z(t+\Delta t) - z(t)}{\Delta t} \mathbf{k}
+						& = \frac{dx}{dt} \mathbf{i} + \frac{dy}{dt} \mathbf{j} + \frac{dz}{dt} \mathbf{k}
+	\end{align*} 
+	The unit tangent vector $\tau$ is $\tau \equiv \frac{\mathbf{r}_t}{|\mathbf{r}_t|}$. In general $\mathbf{r}' \not{=} 0$ for
+	a sufficiently smooth function.
+	
 \section{Gradient vector and directional derivative}
+	
+	\subsection{Gradient vector (grad/nabla/del)}
+	\begin{defn}
+		Let $f:\mathbb{R}^3 \to \mathbb{R}$ be a function. If the partial derfivatives of $f$ with respect to $x$, $y$, and $z$
+		at the point $(a,b,c)$ then the gradient vector of $f$ at $(a,b,c)$ is defined to be the vector
+		\[
+			\nabla f(a,b,c) = \frac{\partial f(a,b,c)}{\partial x}\mathbf{i} + 
+								\frac{\partial f(a,b,c)}{\partial y}\mathbf{j} + 
+								\frac{\partial f(a,b,c)}{\partial z}\mathbf{k}
+		\]
+	\end{defn}
+	
+	The value of $\nabla f$ at a point is independent of the coordinate system.
 
 \end{document}
