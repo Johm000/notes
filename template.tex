@@ -1,16 +1,30 @@
 \documentclass[12pt]{article}
-
-% Include the stuff we need!
 \input{./include/format.tex}
 
-% Set title for frontpage
-\title{MSM2template}
-\author{Will Ridgers}
-\date{April 2011}
-
+% SET THIS STUFF - info for front page.
+\newcommand{\nameOfTheModule}{MSM2Aa - Analytical Technique 1}
+\newcommand{\nameOfTheAuthor}{Will Ridgers}
+\newcommand{\nameOfTheLecturer}{Dr Person}
 
 \begin{document}
-\maketitle
+\input{./include/title.tex}
+\tableofcontents
+\pagebreak
 
+\section{This a section}
+	\begin{defn}
+		This is a definition, with some $x$'s and $y$'s and a function like this
+		\[
+			f(x,y,z) = \sin(x)\cos(x)\tan(y) + \alpha
+		\]
+		where $\alpha \in \mathbb{R}$.
+	\end{defn}
+	
+	\begin{thm}
+		This is a theorem!
+	\end{thm}
+	\begin{proof}[Proof of important theorem]
+		Here is my important proof
+	\end{proof}
 
 \end{document}
