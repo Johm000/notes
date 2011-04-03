@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
-\input{./include/format.tex}
+\input{./include/include.tex}
 
 % SET THIS STUFF - info for front page.
-\newcommand{\nameOfTheModule}{MSM2template}
+\newcommand{\nameOfTheModule}{MSM2Aa}
 \newcommand{\nameOfTheAuthor}{Will Ridgers}
 \newcommand{\nameOfTheLecturer}{Dr Qianxi Wang}
 
@@ -19,6 +19,7 @@
 
 \section{Partial derivatives and chain rule}
 
+	\subsection{Partial derivatives}
 	\begin{defn}
 		The function $f: \mathbb{R}^3 \to \mathbb{R}$ is said to have a partial derivative with respect to $x$
 		at the point $(x_0, y_0, z_0)$ if there exists a limit
@@ -31,6 +32,7 @@
 	
 	Derivatives with respect to $y$ and $z$ are defined in a similar way.
 
+	\subsection{Differentiable functions}
 	\begin{defn}
 		The function $f(x,y,z)$ is called differentiable at $(x_0, y_0, z_0)$ if 
 		$\Delta f = f(x,y,z) - f(x_0, y_0, z_0)$ can be expressed as
@@ -43,11 +45,93 @@
 		\]
 	\end{defn}
 	The notation $o(\rho)$ means going to $0$ faster than $\rho$. Note, this is infinitely small so can be ignored.
-
-
+	
+	\subsection{Sufficiently smooth}
+	\begin{defn}
+		(Informal) A function is said to be sufficiently smooth if the function and as many of it's partial derivatives as required are continuous where they need to be.
+	\end{defn}
+	
+	\subsection{Chain rule}
+	\begin{defn}
+		Chain Rule for two variables. Let $f$ be a function of the variables $x_1, x_2, \cdots , x_n$, $f = f(x_1, x_2, \cdots , x_n)$ 
+		where each $x_j$ is a function of the variables $t_1, t_2, \cdots , t_n$, $x_j = x_j(t_1, t_2, \cdots , t_n)$. Provided
+		that $f$ and $x_j$ are sufficiently smooth, then
+		\[
+			\frac{\partial f}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + 
+											\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + 
+											\cdots +
+											\frac{\partial f}{\partial x_n}\frac{\partial x_n}{\partial t_i}
+		\]
+	\end{defn}
 
 
 \section{Vector and vector geometry}
+
+	\subsection{Vectors}
+	\begin{defn}
+		A vector has both a magnitude and a direction. Vectors may be denoted as $\mathbf{u}$, $\vec{u}$, or $\underline{u}$.
+		The magnitude of a vector is denoted by 
+		\[
+			|\mathbf{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}
+		\]
+		A unit vector has length $1$ and in the Cartesian coordinate system $\mathbf{i}$, $\mathbf{j}$, and $\mathbf{k}$ denote the the unit 
+		coordinate vectors along x, y, z-axes respectively.
+	\end{defn}
+	
+	\subsection{Scalar (dot) product}
+	\begin{defn}
+		Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
+		$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the scalar (or dot) product of the two is
+		\[
+			\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos{\theta} = a_1 b_1 + a_2 b_2 + a_3 b_3
+		\]
+		where $\theta$ is the angle between $\mathbf{a}$ and $\mathbf{b}$.
+	\end{defn}
+	
+	\subsection{Vector (cross) product}
+	\begin{defn}
+		Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
+		$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the vector (or cross) product of the two is
+		\[
+			\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin{\theta}\mathbf{n} =
+			\begin{vmatrix}
+				\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+				a_1 & a_2 & a_3 \\
+				b_1 & b_2 & b_3 
+			\end{vmatrix} 
+		\]
+	\end{defn}
+	
+	\subsection{Straight line equation}
+	\begin{defn}
+		The vector equation of a straight line is
+		\[
+			\mathbf{r} = \mathbf{a} + t \mathbf{d}
+		\]
+		for $t \in \mathbb{R}$, where $\mathbf{a}$ is a point on the line, $\mathbf{d}$ is parallel to the line, 
+		and $\mathbf{r}$ is the position vector of a general point on the line.
+	\end{defn}
+	
+	\subsection{3 dimensional plane equation}
+	\begin{defn}
+		The vector equation of a plane in 3 dimensions is
+		\[
+			\mathbf{r} \cdot \mathbf{n} = \mathbf{a} \cdot \mathbf{n}
+		\]
+		where $\mathbf{a}$ is the position vector of a point in the plane, $\mathbf{n}$ is a vector normal to
+		the plane and $\mathbf{r}$ is the position vector of a general point in the plane.
+	\end{defn}
+	
+	\subsection{Parametric form}
+	A curve $C$ can be expressed using parametric form
+	\[
+		\mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}
+	\]
+	where $a \leq t \leq b$. Thus the initial point $A$ is $(x(a),y(a),z(a))$ and the terminal point $B$ at $(x(b),y(b),z(b))$.
+	$\mathbf{r}(t)$ is a mapping on the interval $[a,b]$ on the t-axis to the curbe in xyz-space.
+	
+	\subsection{Tangent vector of a curve}
+
 \section{Gradient vector and directional derivative}
 
 \end{document}
