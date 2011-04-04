@@ -297,7 +297,7 @@
 		\begin{thm}
 			Let $f:\mathbb{R}^2 \to \mathbb{R}$ be continuous on $D$, which is given as
 			\[
-				D = {(x,y): a \leq x \leq b, c(x) \leq y \leq d(x)},
+				D = \{(x,y): a \leq x \leq b, c(x) \leq y \leq d(x)\},
 			\]
 			where $c(x)$ and $d(x)$ are smooth. If $\iint\limits_D f(x,y) dxdy$ exists, then
 			\[
@@ -305,8 +305,201 @@
 			\]
 		\end{thm}
 		
-		\subsubsection{Geometric interpretation of fubini's theorem}
+		\begin{thm}
+			Let $f:\mathbb{R}^2 \to \mathbb{R}$ be continuous on $D$, which is given as
+			\[
+				D = \{(x,y): c \leq y \leq d, a(y) \leq y \leq b(y)\},
+			\]
+			where $a(y)$ and $b(y)$ are smooth. If $\iint\limits_D f(x,y) dxdy$ exists, then
+			\[
+				\iint\limits_D f(x,y) dxdy = \int\limits_c^d dy \int\limits_{a(y)}^{b(y)} f (x,y) dx
+			\]
+		\end{thm}
 		
+		\subsubsection{Fubini's theorem for triple integrals}
+		\[
+			\iiint\limits_S f(x,y,z) dxdydz \equiv \int\limits_{x=a}^{x=b} dx \int\limits_{y=l(x)}^{y=r(x)} dy \int\limits_{z=g(x,y)}^{z=h(x,y)} f(x,y,z) dz
+											\equiv \int\limits_{a}^{b} dx \int\limits_{l(x)}^{r(x)} dy \int\limits_{g(x,y)}^{h(x,y)} f(x,y,z) dz
+		\]
+		The order of integration does not matter. Choose the easiest order.
+		
+		\subsubsection{Geometric interpretation of fubini's theorem}
+	
+	\subsection{Double integrals in polar coordinates}
+		\subsubsection{Polar coordinates}
+		The relation between polar coordinates and Cartesian coordinates are:
+		\[
+			x = r \cos{\theta}, y = r \sin{\theta}
+		\]
+		or
+		\[
+			r = sqrt{x^2 + y^2}, \tan{\theta} = \frac{y}{x}
+		\]
+		where $r \geq 0$, $0 \leq \theta \leq 2 \pi$ or $-\pi \le \theta \leq \pi$.
+		
+		\subsubsection{Double integrals in polar coordinates}
+		For double integrals in polar coordinates
+		\[
+			dA = dxdy = rdrd \theta
+		\]
+		\[
+			\iint\limits_D f(x,y) dxdy = \iint\limits_{D'} f(r,\theta) rdrd \theta
+		\]
+		where $D'$ is the region of the $(r,\theta)$-plane corresponding to the region of $D$ of the $(x,y)$-plane.
+		
+		\subsubsection{General case}
+		\begin{defn}
+			The Jacobian of the functions $x(u,v)$ and $y(u,v)$ with respect to the variables $u$ and $v$ is the determinant. Hence,
+			\[
+				\frac{\partial (u,v)}{\partial (x,y)} = 
+				\begin{vmatrix}
+					x_u & x_v  \\
+					y_u & y_v 
+				\end{vmatrix} 
+			\]
+		\end{defn}
+		For double integrals we have
+		\[
+			dA = dxdy = \left| \frac{\partial (u,v)}{\partial (x,y)} \right| dudv
+		\]
+		\[
+			\iint\limits_D f(x,y) dxdy = \iint\limits_{D'} f(x,y) | \frac{\partial (x,y)}{\partial (u,v)} | dudv
+		\]
+		where $D'$ is the region of the $(u,v)$-plane corresponding to the region of $D$ of the $(x,y)$-plane.
+	
+	\subsection{Change of variables in triple integrals}
+		\subsubsection{Cylindrical coordinates}
+		Consider the point $P$ with Cartesian coordinates $(x,y,z)$, $Q$ is the projection of $P$ on the $Oxy$ plane. Denote its cylindrical coordinates as $(\rho, \theta, z)$, then:
+		\[
+			\left\{ 
+				\begin{matrix}
+					x = r \cos{\theta} \\
+					y = r \sin{\theta} \\ 
+					z = z
+				\end{matrix} 
+			\right.
+				\iff
+			\left\{ 
+				\begin{matrix}
+					r = \sqrt{x^2 + y^2}  \\
+					\tan{\theta} = \frac{y}{x} \\
+					z = z
+				\end{matrix} 
+			\right.
+		\]
+		where $r \ge 0$, $0 \le \theta < 2 \pi$, $-\infty < z < \infty$.
+		
+		\subsubsection{Jacobian for triple integrals}
+		\begin{defn}
+			The Jacobian of the functions $x(u,v,w)$, $y(u,v,w)$, and $z(u,v,w)$ with respect to the variables $u$, $v$, and $w$ is the determinant. Hence,
+			\[
+				\frac{\partial (u,v,w)}{\partial (x,y,z)} = 
+				\begin{vmatrix}
+					x_u & x_v & x_w \\
+					y_u & y_v & y_w \\
+					z_u & z_v & z_w					
+				\end{vmatrix} 
+			\]
+		\end{defn}
+		
+		For triple integrals we have that 
+		\[
+			dV = dxdydz = \left| \frac{\partial (x,y,z)}{\partial (u,v,w)} \right| dudvdw
+		\]
+		Hence,
+		\[
+			\iiint\limits_S f(x,y,z) dxdydz = \iiint\limits_{S'} f(x(u,v,w), y(u,v,w), z(u,v,w)) \left| \frac{\partial (x,y,z)}{\partial (u,v,w)} \right| dudvdw
+		\]
+		where $S'$ is the region of the $(u,v,w)$-plane corresponding to the region of $S$ of the $(x,y,z)$-plane.
+		
+		\subsubsection{Triple integrals in cylindrical coordinates}
+		For the cylindrical coordinates we have that $x=r \cos{\theta}$, $y=r \sin{\theta}$, and $z=z$.
+		Hence,
+		\[
+			\frac{\partial (x,y,z)}{\partial (r,\theta,z)} = 
+				\begin{vmatrix}
+					x_r & x_\theta & x_z \\
+					y_r & y_\theta & y_z \\
+					z_r & z_\theta & z_z					
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					x_r & x_\theta & 0 \\
+					y_r & y_\theta & 0 \\
+					0 & 0 & 1					
+				\end{vmatrix} = r
+		\]
+		Finally giving that
+		\[	
+			dV = dxdydz = rdrd\theta dz
+		\]
+		Hence,
+		\[
+			\iiint\limits_S f(x,y,z) dxdydz = \iiint\limits_{S'} f(r, \theta, z) r drd\theta dz
+		\]
+		
+		\subsubsection{Spherical coordinates}
+		Spherical coordinates $(\rho, \theta, \phi)$
+		\[
+			x = \rho \sin{\phi} \cos{\theta}, \quad y = \rho \sin{\phi} \sin{\theta}, \quad z = \rho \cos{\phi}
+		\]
+		where $\rho \ge 0$, $0 \le \theta \le 2 \Pi$, $0 \le \phi \le \Pi$.
+		
+		Relation between Cartesian and spherical coordinates
+		\begin{align*}
+			\rho &= \sqrt{x^2 + y^2 + z^2} \\
+			\theta &= \arctan{ \left( \frac{y}{z} \right)} \\
+			\phi &= \arccos{ \left(\frac{z}{\rho} \right)}
+		\end{align*}
+		
+		Relation between cylindrical and spherical coordinates
+		\begin{align*}
+			r &= \rho \sin{\phi} \\ 
+			\theta &= \theta \\
+			z &= \rho \cos{\phi}
+		\end{align*}
+		
+		\subsubsection{Jacobian of spherical coordinates}
+		Using
+		\[
+			x = \rho \sin{\phi} \cos{\theta}, \quad y = \rho \sin{\phi} \sin{\theta}, \quad z = \rho \cos{\phi}
+		\]
+		we have that
+		\[
+			\frac{\partial (x,y,z)}{\partial (\rho,\phi,\theta)} = \rho^2 \sin{\theta}
+		\]
+		
+		\subsubsection{Triple integrals in spherical coordinates}
+		From the above result, we have that
+		\[
+			dV = \rho^2 \sin{\theta} d\rho d\phi d\theta
+		\]
+		Hence
+		\[
+			\iiint\limits_S f(x,y,z) dxdydz = \iiint\limits_{S'} f( \rho, \phi, \theta) \rho^2 \sin{\theta} d\rho d\phi d\theta
+		\]
+		
+	\subsection{Line integrals}
+		\subsubsection{Fields}
+		\begin{defn}
+			A scalar function depending on a position is called a scalar field. A vector function depending on a position is called a vector field.
+		\end{defn}
+		
+		\subsubsection{Tangential vector}
+		If $\mathbf{r} = (x(t), y(t), z(t)), \quad t \in [t_0, t_1]$ is a parameterisatino of the curve $C$ (preserving orientation) then
+		\begin{itemize}
+			\item The tangential vector of the curve is $\mathbf{T}(t) = \frac{d\mathbf{r}}{dt} = \left( \frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt} \right)$
+			\item It's magnitude is $\left| \mathbf{T} \right| = \left| \frac{d\mathbf{r}}{dt} \right| = \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 + \left( \frac{dz}{dt} \right)^2   }$
+			\item The length $ds$ is $ds = \left| d\mathbf{r} \right| = \left| \frac{d\mathbf{r}}{dt} \right|dt = \left| \mathbf{T} \right| dt$
+		\end{itemize}
+		
+		\subsubsection{Line integrals}
+		
+		
+		\subsubsection{Line integrals of vector fields}
+		\subsubsection{Other expressions of line integrals}
+		\subsubsection{Work done by a force}
+	
 
 \end{document}
 
