@@ -278,10 +278,34 @@
 		
 		\subsubsection{Geometric interpretation of double integrals}
 		
-		\subsubsection{Facts about double integrals}
+		\subsubsection{Properties of double integrals}
 		\begin{enumerate}
-			\item If $D$ is a region of $\mathbb{R}^2$, then 
+			\item If $D$ is a region of $\mathbb{R}^2$, then $\iint\limits_D f(x,y) dxdy$ is the volume of a solid region $S$ lying above domain $D$ in the $xy$-plane and below the surface $z=f(x,y)$.
+			\item $\iint\limits_D 1 dxdy = $ area of $R$.
+			\item If $S$ is a region of $\mathbb{R}^3$ then $\iiint\limits_S 1 dxdydz = $ volume of $S$.
+			\item Suppose $f$ and $g$ are continuous functions, $c$ and $d$ are constants, then
+					\[
+						\iint\limits_D [ cf(x,y) + dg(x,y)] dxdy = c \iint\limits_D f(x,y) dxdy + d \iint\limits_D g(x,y) dxdy
+					\]
+			\item Let $D = D_1 \cup D_2$, where $D_1$ and $D_2$ are non-overlapping regions. If $\iint\limits_D f(x,y)$ dxdy exists, then
+					\[
+						\iint\limits_D f(x,y) dxdy = \iint\limits_{D_1} f(x,y) dxdy + \iint\limits_{D_2} f(x,y) dxdy
+					\]
 		\end{enumerate}
+		
+		\subsubsection{Fubini's theorem}
+		\begin{thm}
+			Let $f:\mathbb{R}^2 \to \mathbb{R}$ be continuous on $D$, which is given as
+			\[
+				D = {(x,y): a \leq x \leq b, c(x) \leq y \leq d(x)},
+			\]
+			where $c(x)$ and $d(x)$ are smooth. If $\iint\limits_D f(x,y) dxdy$ exists, then
+			\[
+				\iint\limits_D f(x,y) dxdy = \int\limits_a^b \left( \int\limits_{c(x)}^{d(x)} f (x,y) dy \right) dx = \int\limits_a^b dx \int\limits_{c(x)}^{d(x)} f (x,y) dy
+			\]
+		\end{thm}
+		
+		\subsubsection{Geometric interpretation of fubini's theorem}
 		
 
 \end{document}
