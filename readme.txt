@@ -11,3 +11,20 @@ clean.bat		- Deletes files created during build process we don't need,
 				  except .pdf and .log. Moves .pdf and .log to out and log 
 				  directories.
 cleanall.bat	- Runs clean.bat, also deletes .pdf and .log files.
+
+Module		| Who
+--------------------------------
+MSM2Aa		| Will
+			|    - Check methods steps are as concise as they can be.
+			|
+MSM2Ab		| Will
+MSM2Ba		| Joao
+MSM2Bb		| Joao
+MSM2Ca		| Will
+MSM2Cb		| Will
+MSM2Da		| Joao
+MSM2Db		| Joao
+MSM201a		| Joao
+MSM201b		| Joao
+MSM203a		| Will
+MSM203b		| Will

@@ -11,151 +11,279 @@
 \tableofcontents
 \pagebreak
 
+
+
 \section{Functions of Several Real Variables}
-	\begin{defn} 
-		For a function $z = f(x,y)$ a vertical section if the graph of $z = f(x,c)$ or $z = f(c,y)$ 
-		for some constant $c$. A level curve is the curve $c = f(x,y)$.
-	\end{defn}
+	\subsection{Functions of Several Real Variables}
+		\begin{defn} 
+			For a function $z = f(x,y)$ a vertical section if the graph of $z = f(x,c)$ or $z = f(c,y)$ 
+			for some constant $c$. A level curve is the curve $c = f(x,y)$.
+		\end{defn}
 
-\section{Partial derivatives and chain rule}
+	\subsection{Partial derivatives and chain rule}
 
-	\subsection{Partial derivatives}
-	\begin{defn}
-		The function $f: \mathbb{R}^3 \to \mathbb{R}$ is said to have a partial derivative with respect to $x$
-		at the point $(x_0, y_0, z_0)$ if there exists a limit
+		\subsubsection{Partial derivatives}
+		\begin{defn}
+			The function $f: \mathbb{R}^3 \to \mathbb{R}$ is said to have a partial derivative with respect to $x$
+			at the point $(x_0, y_0, z_0)$ if there exists a limit
+				\[
+					\frac{\partial f (x_0, y_0, z_0)}{\partial x} \equiv \lim_{\Delta x \to 0} 
+					\frac{f(x_0 + \Delta x, y_0, z_0) - f(x_0, y_0, z_0)}{\Delta x}
+				\]
+			which is called the partial derivative of $f$ with respect to $x$.
+		\end{defn}
+		
+		Derivatives with respect to $y$ and $z$ are defined in a similar way.
+
+		\subsubsection{Differentiable functions}
+		\begin{defn}
+			The function $f(x,y,z)$ is called differentiable at $(x_0, y_0, z_0)$ if 
+			$\Delta f = f(x,y,z) - f(x_0, y_0, z_0)$ can be expressed as
 			\[
-				\frac{\partial f (x_0, y_0, z_0)}{\partial x} \equiv \lim_{\Delta x \to 0} 
-				\frac{f(x_0 + \Delta x, y_0, z_0) - f(x_0, y_0, z_0)}{\Delta x}
+				\Delta f = f_x(x_0, y_0, z_0) \Delta x + f_y(x_0, y_0, z_0) \Delta y + f_z(x_0, y_0, z_0) \Delta z + o(\rho)
 			\]
-		which is called the partial derivative of $f$ with respect to $x$.
-	\end{defn}
-	
-	Derivatives with respect to $y$ and $z$ are defined in a similar way.
-
-	\subsection{Differentiable functions}
-	\begin{defn}
-		The function $f(x,y,z)$ is called differentiable at $(x_0, y_0, z_0)$ if 
-		$\Delta f = f(x,y,z) - f(x_0, y_0, z_0)$ can be expressed as
-		\[
-			\Delta f = f_x(x_0, y_0, z_0) \Delta x + f_y(x_0, y_0, z_0) \Delta y + f_z(x_0, y_0, z_0) \Delta z + o(\rho)
-		\]
-		where $\Delta x = x - x_0$, $\Delta y = y - y_0$, $\Delta z = z - z_0$ and 
-		\[
-			\rho = \sqrt{ (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2 }
-		\]
-	\end{defn}
-	The notation $o(\rho)$ means going to $0$ faster than $\rho$. Note, this is infinitely small so can be ignored.
-	
-	\subsection{Sufficiently smooth}
-	\begin{defn}
-		(Informal) A function is said to be sufficiently smooth if the function and as many of it's partial derivatives as required are continuous where they need to be.
-	\end{defn}
-	
-	\subsection{Chain rule}
-	\begin{defn}
-		Chain Rule for two variables. Let $f$ be a function of the variables $x_1, x_2, \cdots , x_n$, $f = f(x_1, x_2, \cdots , x_n)$ 
-		where each $x_j$ is a function of the variables $t_1, t_2, \cdots , t_n$, $x_j = x_j(t_1, t_2, \cdots , t_n)$. Provided
-		that $f$ and $x_j$ are sufficiently smooth, then
-		\[
-			\frac{\partial f}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + 
-											\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + 
-											\cdots +
-											\frac{\partial f}{\partial x_n}\frac{\partial x_n}{\partial t_i}
-		\]
-	\end{defn}
+			where $\Delta x = x - x_0$, $\Delta y = y - y_0$, $\Delta z = z - z_0$ and 
+			\[
+				\rho = \sqrt{ (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2 }
+			\]
+		\end{defn}
+		The notation $o(\rho)$ means going to $0$ faster than $\rho$. Note, this is infinitely small so can be ignored.
+		
+		\subsubsection{Sufficiently smooth}
+		\begin{defn}
+			(Informal) A function is said to be sufficiently smooth if the function and as many of it's partial derivatives
+			as required are continuous where they need to be.
+		\end{defn}
+		
+		\subsubsection{Chain rule}
+		\begin{defn}
+			Chain Rule for two variables. Let $f$ be a function of the variables $x_1, x_2, \cdots , x_n$, $f = f(x_1, x_2, \cdots , x_n)$ 
+			where each $x_j$ is a function of the variables $t_1, t_2, \cdots , t_n$, $x_j = x_j(t_1, t_2, \cdots , t_n)$. Provided
+			that $f$ and $x_j$ are sufficiently smooth, then
+			\[
+				\frac{\partial f}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + 
+												\frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + 
+												\cdots +
+												\frac{\partial f}{\partial x_n}\frac{\partial x_n}{\partial t_i}
+			\]
+		\end{defn}
 
 
-\section{Vector and vector geometry}
+	\subsection{Vector and vector geometry}
 
-	\subsection{Vectors}
-	\begin{defn}
-		A vector has both a magnitude and a direction. Vectors may be denoted as $\mathbf{u}$, $\vec{u}$, or $\underline{u}$.
-		The magnitude of a vector is denoted by 
+		\subsubsection{Vectors}
+		\begin{defn}
+			A vector has both a magnitude and a direction. Vectors may be denoted as $\mathbf{u}$, $\vec{u}$, or $\underline{u}$.
+			The magnitude of a vector is denoted by 
+			\[
+				|\mathbf{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}
+			\]
+			A unit vector has length $1$ and in the Cartesian coordinate system $\mathbf{i}$, $\mathbf{j}$, and $\mathbf{k}$ denote the the unit 
+			coordinate vectors along x, y, z-axes respectively.
+		\end{defn}
+		
+		\subsubsection{Scalar (dot) product}
+		\begin{defn}
+			Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
+			$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the scalar (or dot) product of the two is
+			\[
+				\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos{\theta} = a_1 b_1 + a_2 b_2 + a_3 b_3
+			\]
+			where $\theta$ is the angle between $\mathbf{a}$ and $\mathbf{b}$.
+		\end{defn}
+		
+		\subsubsection{Vector (cross) product}
+		\begin{defn}
+			Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
+			$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the vector (or cross) product of the two is
+			\[
+				\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin{\theta}\mathbf{n} =
+				\begin{vmatrix}
+					\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+					a_1 & a_2 & a_3 \\
+					b_1 & b_2 & b_3 
+				\end{vmatrix} 
+			\]
+		\end{defn}
+		
+		\subsubsection{Straight line equation}
+		\begin{defn}
+			The vector equation of a straight line is
+			\[
+				\mathbf{r} = \mathbf{a} + t \mathbf{d}
+			\]
+			for $t \in \mathbb{R}$, where $\mathbf{a}$ is a point on the line, $\mathbf{d}$ is parallel to the line, 
+			and $\mathbf{r}$ is the position vector of a general point on the line.
+		\end{defn}
+		
+		\subsubsection{3 dimensional plane equation}
+		\begin{defn}
+			The vector equation of a plane in 3 dimensions is
+			\[
+				\mathbf{r} \cdot \mathbf{n} = \mathbf{a} \cdot \mathbf{n}
+			\]
+			where $\mathbf{a}$ is the position vector of a point in the plane, $\mathbf{n}$ is a vector normal to
+			the plane and $\mathbf{r}$ is the position vector of a general point in the plane.
+		\end{defn}
+		
+		\subsubsection{Parametric form}
+		A curve $C$ can be expressed using parametric form
 		\[
-			|\mathbf{u}| = \sqrt{u_1^2 + u_2^2 + u_3^2}
+			\mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}
 		\]
-		A unit vector has length $1$ and in the Cartesian coordinate system $\mathbf{i}$, $\mathbf{j}$, and $\mathbf{k}$ denote the the unit 
-		coordinate vectors along x, y, z-axes respectively.
-	\end{defn}
+		where $a \leq t \leq b$. Thus the initial point $A$ is $(x(a),y(a),z(a))$ and the terminal point $B$ at $(x(b),y(b),z(b))$.
+		$\mathbf{r}(t)$ is a mapping on the interval $[a,b]$ on the t-axis to the curbe in xyz-space.
+		
+		\subsubsection{Tangent vector of a curve}
+		For a curve represented in parametric form (see above), for each $t$ there is a point $\mathbf{r}(t)$ on the curve. The tangent
+		vector of the curve can be found by
+		\begin{align*}
+			\frac{d\mathbf{r}}{dt}& = \lim_{\Delta t \to 0} \frac{\mathbf{r}(t+\Delta t) - \mathbf{r}(t)}{\Delta t} \\
+							& = \lim_{\Delta t \to 0} \frac{x(t+\Delta t) - x(t)}{\Delta t} \mathbf{i} + 
+								  \lim_{\Delta t \to 0} \frac{y(t+\Delta t) - y(t)}{\Delta t} \mathbf{j} + 
+								  \lim_{\Delta t \to 0} \frac{z(t+\Delta t) - z(t)}{\Delta t} \mathbf{k} \\
+							& = \frac{dx}{dt} \mathbf{i} + \frac{dy}{dt} \mathbf{j} + \frac{dz}{dt} \mathbf{k}
+		\end{align*} 
+		The unit tangent vector $\tau$ is $\tau \equiv \frac{\mathbf{r}_t}{|\mathbf{r}_t|}$. In general $\mathbf{r}' \not{=} 0$ for
+		a sufficiently smooth function.
+		
+	\subsection{Gradient vector and directional derivative}
+		
+		\subsubsection{Gradient vector (grad/nabla/del)}
+		\begin{defn}
+			Let $f:\mathbb{R}^3 \to \mathbb{R}$ be a function. If the partial derfivatives of $f$ with respect to $x$, $y$, and $z$
+			at the point $(a,b,c)$ then the gradient vector of $f$ at $(a,b,c)$ is defined to be the vector
+			\[
+				\nabla f(a,b,c) = \frac{\partial f(a,b,c)}{\partial x}\mathbf{i} + 
+									\frac{\partial f(a,b,c)}{\partial y}\mathbf{j} + 
+									\frac{\partial f(a,b,c)}{\partial z}\mathbf{k}
+			\]
+		\end{defn}
+		
+		\subsubsection{Key points}
+		\begin{itemize}
+			\item The value of $\nabla f$ at a point is independent of the coordinate system.
+			\item $\nabla f$ is a vector function in n dimensions where f has n variables.
+			\item $\nabla$ is a linear operator, i.e $\nabla (\lambda f + \mu g) = \lambda \nabla f + \mu \nabla g$.
+		\end{itemize}
+		
+		\subsubsection{Grad as normal}
+		\begin{thm}
+			Let $f:\mathbb{R}^2 \to \mathbb{R}$ be a sufficiently function, and $(a,b)$ be a point on the level curve $f(x,y)=k$ for some
+			constant $k$. If $\nabla f (a,b) \not{=} 0$, then the vector $\nabla f (a,b)$ is normal to the level curbe $f(x,y)=k$ at the point $(a,b)$.
+		\end{thm}
+		
+		\subsubsection{Finding tangent plane to a surface}
+		To find the tangent plane to a surface $z=F(x,y)$ or $G(x,y,z)=k$ at the point $\mathbf{a} = (a,b,c)$:
+		\begin{enumerate}
+			\item Write the surface in the form of the level surface
+				\[
+					f(x,y,z) = F(x,y) - z = 0
+				\]
+				or
+				\[
+					f(x,y,z) = G(x,y,z) - k = 0
+				\]
+			\item Calculate the normal vector to the surface at the point $\mathbf{a}$
+				\[
+					\mathbf{n} = \nabla f ( \mathbf{a} )
+				\]
+			\item The tangent plane is
+				\[
+					\mathbf{r} \cdot \mathbf{n} = \mathbf{a} \cdot \mathbf{n}
+				\]
+		\end{enumerate}
+		
+		\subsubsection{Directional derivatives}
+		\begin{defn}
+			Suppose that $f:\mathbb{R}^3 \to \mathbb{R}$ and $\mathbf{u} = u_1 \mathbf{i} + u_2 \mathbf{j} + u_3 \mathbf{k}$ is a unit vector in $\mathbb{R}^3$.
+			The directional derivative of $f$ at $(x,y,z)$ in the direction of $\mathbf{u}$ is defined to be
+			\[
+				D_u f(x,y,z) = \lim_{h \to 0^{+}} \frac{f(x+hu_1, y+hu_2, z+hu_3) - f(x,y,z)}{h}
+			\]
+		\end{defn}
+		
+		\begin{lemma}
+			Let $f:\mathbb{R}^3 \to \mathbb{R}$ be a sufficiently smooth, and $\mathbf{u} = u_1 \mathbf{i} + u_2 \mathbf{j} + u_3 \mathbf{k}$ 
+			be a unit vector in $\mathbb{R}^3$. If it exists, then
+			\[
+				\frac{d}{dt} f(a + tu_1, b + tu_2, c + tu_3) | _ t=0 = D_u f(a,b,c)
+			\]
+		\end{lemma}
+		
+		\subsubsection{Relation between gradient and directional derivative}
+		\begin{thm}
+			Let $f:\mathbb{R}^3 \to \mathbb{R}$ be a sufficiently smooth, and $\mathbf{u} = u_1 \mathbf{i} + u_2 \mathbf{j} + u_3 \mathbf{k}$ 
+			be a unit vector in $\mathbb{R}^3$. Then
+			\[
+				D_u f(a,b,c) = \mathbf{u} \cdot \nabla f(a,b,c)
+			\]
+		\end{thm}
+		
+		\begin{itemize}
+			\item The directional derivative is a scalar function not a vector.
+			\item $D_u$ is linear; $D_u(\lambda f + \mu g) = \lambda D_u f + \mu D_u g$.
+		\end{itemize}
+		
+		\subsubsection{Calculating directional derivatives}
+		To calculate the directional derivatibe of a function $f$ in the direction of the vector $\mathbf{u}$:
+		\begin{enumerate}
+			\item Find the unit vector $\hat{\mathbf{u}} = \frac{\mathbf{u}}{|\mathbf{u}|}$
+			\item Find $\nabla f$
+			\item Calculate $D_{\hat{\mathbf{u}}} f = \nabla f \cdot \hat{\mathbf{u}}$
+		\end{enumerate}
+		
+		\subsubsection{Steepst ascent theorem}
+		\begin{thm}
+			Let $f$ be a function of several real variables. Suppose that $\nabla f$ exists and is non-zero at the point $\mathbf{a}$. 
+			Then the direction of the vector $\nabla f(\mathbf{a})$ is always the direction of maximum increase of the function $f$ at the point $\mathbf{a}$.
+		\end{thm}
+		
+		\subsubsection{Finding paths of maximum increase}
+		To calculate the path of maximum increase of a function $f$ of two variables starting at point $(a,b)$:
+		\begin{enumerate}
+			\item Let the path be $\mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j}$
+			\item $\nabla f$ at a point $(x,y)$ is always in the direction of the maximum increase (by Steepst ascent theorem) of the function $f$ at the point,
+					so the tangent vector to the path  $\mathbf{r}'(t) = x'(t)\mathbf{i} + y'(t)\mathbf{j}$ is parallel to $\nabla f = f_x \mathbf{i} + f_y \mathbf{j}$
+			\item Since the two vectors are parallel we have
+					\[
+						x'(t) \mathbf{i} + y'(t) \mathbf{j} = \lambda ( f_x \mathbf{i} + f_y \mathbf{j} ),  \quad \lambda \not{=} 0 \implies \frac{y'(t)}{x'(t)} = \frac{f_y}{f_x}
+					\]
+			\item Hence
+					\[
+						\frac{dy}{dx} = \frac{y'(t)}{x'(t)} = \frac{f_y}{f_x}
+					\]
+			\item Solve for $y$ in terms of $x$ using the boundary conditions $y=b$ when $x=a$.
+		\end{enumerate}
+
+\section{Integration of Functions of Several Real Variables}
 	
-	\subsection{Scalar (dot) product}
-	\begin{defn}
-		Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
-		$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the scalar (or dot) product of the two is
-		\[
-			\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos{\theta} = a_1 b_1 + a_2 b_2 + a_3 b_3
-		\]
-		where $\theta$ is the angle between $\mathbf{a}$ and $\mathbf{b}$.
-	\end{defn}
-	
-	\subsection{Vector (cross) product}
-	\begin{defn}
-		Given two vectors $\mathbf{a} = a_1 \mathbf{i} + a_2 \mathbf{j} + a_3 \mathbf{k}$,
-		$\mathbf{b} = b_1 \mathbf{i} + b_2 \mathbf{j} + b_3 \mathbf{k}$ the vector (or cross) product of the two is
-		\[
-			\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin{\theta}\mathbf{n} =
-			\begin{vmatrix}
-				\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-				a_1 & a_2 & a_3 \\
-				b_1 & b_2 & b_3 
-			\end{vmatrix} 
-		\]
-	\end{defn}
-	
-	\subsection{Straight line equation}
-	\begin{defn}
-		The vector equation of a straight line is
-		\[
-			\mathbf{r} = \mathbf{a} + t \mathbf{d}
-		\]
-		for $t \in \mathbb{R}$, where $\mathbf{a}$ is a point on the line, $\mathbf{d}$ is parallel to the line, 
-		and $\mathbf{r}$ is the position vector of a general point on the line.
-	\end{defn}
-	
-	\subsection{3 dimensional plane equation}
-	\begin{defn}
-		The vector equation of a plane in 3 dimensions is
-		\[
-			\mathbf{r} \cdot \mathbf{n} = \mathbf{a} \cdot \mathbf{n}
-		\]
-		where $\mathbf{a}$ is the position vector of a point in the plane, $\mathbf{n}$ is a vector normal to
-		the plane and $\mathbf{r}$ is the position vector of a general point in the plane.
-	\end{defn}
-	
-	\subsection{Parametric form}
-	A curve $C$ can be expressed using parametric form
-	\[
-		\mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}
-	\]
-	where $a \leq t \leq b$. Thus the initial point $A$ is $(x(a),y(a),z(a))$ and the terminal point $B$ at $(x(b),y(b),z(b))$.
-	$\mathbf{r}(t)$ is a mapping on the interval $[a,b]$ on the t-axis to the curbe in xyz-space.
-	
-	\subsection{Tangent vector of a curve}
-	For a curve represented in parametric form (see above), for each $t$ there is a point $\mathbf{r}(t)$ on the curve. The tangent
-	vector of the curve can be found by
-	\begin{align*}
-		\frac{d\mathbf{r}}{dt}& = \lim_{\Delta t \to 0} \frac{\mathbf{r}(t+\Delta t) - \mathbf{r}(t)}{\Delta t} \\
-						& = \lim_{\Delta t \to 0} \frac{x(t+\Delta t) - x(t)}{\Delta t} \mathbf{i} + 
-							  \lim_{\Delta t \to 0} \frac{y(t+\Delta t) - y(t)}{\Delta t} \mathbf{j} + 
-							  \lim_{\Delta t \to 0} \frac{z(t+\Delta t) - z(t)}{\Delta t} \mathbf{k}
-						& = \frac{dx}{dt} \mathbf{i} + \frac{dy}{dt} \mathbf{j} + \frac{dz}{dt} \mathbf{k}
-	\end{align*} 
-	The unit tangent vector $\tau$ is $\tau \equiv \frac{\mathbf{r}_t}{|\mathbf{r}_t|}$. In general $\mathbf{r}' \not{=} 0$ for
-	a sufficiently smooth function.
-	
-\section{Gradient vector and directional derivative}
-	
-	\subsection{Gradient vector (grad/nabla/del)}
-	\begin{defn}
-		Let $f:\mathbb{R}^3 \to \mathbb{R}$ be a function. If the partial derfivatives of $f$ with respect to $x$, $y$, and $z$
-		at the point $(a,b,c)$ then the gradient vector of $f$ at $(a,b,c)$ is defined to be the vector
-		\[
-			\nabla f(a,b,c) = \frac{\partial f(a,b,c)}{\partial x}\mathbf{i} + 
-								\frac{\partial f(a,b,c)}{\partial y}\mathbf{j} + 
-								\frac{\partial f(a,b,c)}{\partial z}\mathbf{k}
-		\]
-	\end{defn}
-	
-	The value of $\nabla f$ at a point is independent of the coordinate system.
+	\subsection{Multiple integrals}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
