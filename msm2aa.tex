@@ -494,9 +494,44 @@
 		\end{itemize}
 		
 		\subsubsection{Line integrals}
+		\begin{defn}
+			The line integral of a function $f(\mathbf{r})$ over a curve $C$
+			\[
+				\mathbf{r} = \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}, \quad a \le t \le b
+			\]
+			is denoted as $\int\limits_C f(\mathbf{r}) ds$, and is defined by
+			\[
+				\int\limits_C f(\mathbf{r}) ds = \int\limits_a^b f(\mathbf{r}(t))|\mathbf{T}|dt
+			\]
+		\end{defn}
 		
+		Some important notes
+		\begin{itemize}	
+			\item $f(\mathbf{r}(t))$ is $f(\mathbf{r})$ along the curve $C$
+			\item $|\mathbf{T}| = \left| \frac{d\mathbf{r}}{dt} \right| = \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2 + \left( \frac{dz}{dt} \right)^2 }$
+			\item The right hand size is just a common 1-dimensional definite integrate to $t$.
+		\end{itemize}
 		
 		\subsubsection{Line integrals of vector fields}
+		\begin{defn}
+			The line integral of a vector $v(\mathbf{r})$ over a curve $C$
+			\[
+				\mathbf{r} = \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}, \quad a \le t \le b
+			\]
+			is denoted as $\int\limits_C \mathbf{v} \cdot d\mathbf{r}$, and is defined by
+			\[
+				\int\limits_C \mathbf{v} \cdot d\mathbf{r} = \int\limits_a^b \mathbf{v}(\mathbf{r}(t)) \cdot \mathbf{T}(t) dt
+			\]
+		\end{defn}
+		
+		Some important notes
+		\begin{itemize}
+			\item $\mathbf{v}(\mathbf{r}(t))$ is a vector $\mathbf{v}(\mathbf{r})$ along the curve $C$.
+			\item TODO
+			\item The integrand on the right is a scalar function of $t$
+			\item The right hand size is just a common 1-dimensional definite integrate to $t$
+		\end{itemize}
+		
 		\subsubsection{Other expressions of line integrals}
 		\subsubsection{Work done by a force}
 	
