@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\input{./include/include.tex}
+
+% SET THIS STUFF - info for front page.
+\newcommand{\nameOfTheModule}{MSM2Ca - Linear Algebra}
+\newcommand{\nameOfTheAuthor}{Will Ridgers}
+\newcommand{\nameOfTheLecturer}{Dr Sergey Shpectorov}
+
+\begin{document}
+\input{./include/title.tex}
+\tableofcontents
+\pagebreak
+
+\section{Introduction}
+	\subsection{Fields}
+	The set of scalars will often be $\mathbb{R}$, $\mathbb{C}$, or $\mathbb{Q}$. These sets are mathematical structures called fields. Other examples of fields would be
+	\begin{itemize}
+		\item $\mathbb{Z}_p$ (integers of modulo $p$) where $p$ is a prime integer.
+		\item $\mathbb{F}_q$ where $q = p^q \not{=} 1$ is a prime power. This is a unique finite field.
+	\end{itemize}
+	
+	\subsection{Working with finite fields}
+	In $\mathbb{F}_p = \mathbb{Z}_p$ you can simply do the operations in modulo $p$.
+	\[
+		x \oplus y := x + y mod p,
+	\]
+	\[
+		x \otimes y := xy mod p
+	\]
+	Subtration and division are subsituted with addition and multiplication:
+	\[
+		x - y := x + (-y),
+	\]
+	\[
+		\frac{x}{y} := xy^{-1}
+	\]
+	
+	\subsubsection{Operations for $\mathbb{F}_4$}
+	For any finite field you can use precomupted addition/multiplication tables.
+	\[
+		\begin{array}{c | c c c c}
+			+ & 0 & 1 & a & b \\
+			\hline
+			0 & 0 & 1 & a & b \\
+			1 & 1 & 0 & b & a \\ 
+			a & a & b & 0 & 1 \\
+			b & b & a & 1 & 0
+		\end{array}
+		\quad
+		\begin{array}{c|cccc}
+			\cdot & 0 & 1 & a & b \\
+			\hline
+			0 & 0 & 0 & 0 & 0 \\
+			1 & 0 & 1 & a & b \\
+			a & 0 & a & b & 1 \\
+			b & 0 & b & 1 & a
+		\end{array}
+	\]
+	In $\mathbb{F}_4$, note that $-0 = 0$, $-1 = 1$, $-a = a$, and $-b = b$.
+
+\section{Vector Spaces}
+	\begin{defn}
+		A vector space over the field of scalars $\mathbb{F}_4$ is a set $V$, whose elements are vectors, together with two binary operations addition and multiplication. The following axioms hold for addition
+		\begin{itemize}
+			\item Associative: $\forall a,b,c \in V, \quad a + ( b + c ) = (a + b) + c$.
+			\item Existance of zero element: $\forall a \in V, \quad \exists 0 \in V$ such that $a + 0 = a$.
+			\item Existance of inverse element: $\forall a \in V, \quad \exists (-a) \in V$ such that $a + (-a) = 0$.
+			\item Commutative: $\forall a,b \in V, \quad a + b = b + a$.
+		\end{itemize}
+		And the axioms for multiplication are
+		\begin{itemize}
+			\item Associative: $\forall a,b \in \mathbb{F}_4, \quad a(bc) = (ab)c$.
+			\item Distributive: $\forall a,b,c \in \mathbb{F}_4$ then
+			\item Existance of inverse element:
+		\end{itemize}
+	\end{defn}
+	
+	
+\section{Subspaces}
+\section{Bases and dimension}
+\section{Linear mappings}
+\section{Isomorphisms}
+\section{Matrix of linear mapping}
+\section{Linear transformations}
+\section{Eigenvectors}
+
+
+
+\end{document}
