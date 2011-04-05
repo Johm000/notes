@@ -1,6 +1,9 @@
 These are the LaTeX source files for summaries of modules studied at
 the University of Birmingham.
 
+You can get the 'latest' pdf files from here: http://mindfuzz.net/notes/
+They will probably only be updated every few days, and are likely to be 'behind' this repo.
+
 Windows build scripts:
 	build.bat 		- This will build a single .tex file.
 	buildall.bat 	- Loops through maindir, builds all .tex files with build.bat
