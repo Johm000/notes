@@ -62,21 +62,72 @@
 	\begin{defn}
 		A vector space over the field of scalars $\mathbb{F}_4$ is a set $V$, whose elements are vectors, together with two binary operations addition and multiplication. The following axioms hold for addition
 		\begin{itemize}
-			\item Associative: $\forall a,b,c \in V, \quad a + ( b + c ) = (a + b) + c$.
-			\item Existance of zero element: $\forall a \in V, \quad \exists 0 \in V$ such that $a + 0 = a$.
-			\item Existance of inverse element: $\forall a \in V, \quad \exists (-a) \in V$ such that $a + (-a) = 0$.
-			\item Commutative: $\forall a,b \in V, \quad a + b = b + a$.
+			\item Associative: $\forall u,v,w \in V, \quad u + ( v + w ) = (u + v) + w$
+			\item Existance of zero element: $\forall u \in V, \quad \exists 0 \in V$ such that $u + 0 = u$
+			\item Existance of inverse element: $\forall u \in V, \quad \exists (-u) \in V$ such that $u + (-u) = 0$
+			\item Commutative: $\forall u,v \in V, \quad u + v = v + u$
 		\end{itemize}
 		And the axioms for multiplication are
 		\begin{itemize}
-			\item Associative: $\forall a,b \in \mathbb{F}_4, \quad a(bc) = (ab)c$.
-			\item Distributive: $\forall a,b,c \in \mathbb{F}_4$ then
-			\item Existance of inverse element:
+			\item Associative: $\forall a,b \in \mathbb{F}_4, v \in V, \quad a(bv) = (ab)v$.
+			\item Distributive: $\forall a,b \in \mathbb{F}_4, v,u \in V$ then
+					\[
+						a(u+v) = au + av,
+					\]
+					\[
+						(a+b)v = av + bv
+					\]
+			\item Existance of identity element: $1v = v \forall v \in V$
 		\end{itemize}
 	\end{defn}
 	
+	\subsection{Basic properties}
+	\begin{thm}
+		Suppose that $V$ is a vector space over a field of scalars $\mathbb{F}$. Then the following axioms hold:
+		\begin{itemize}
+			\item $\forall u,v,w \in V$ if $u + v = u + w$ then $v=w$ (cancellation of sums)
+			\item $0v = 0, \quad \forall v \in V$
+			\item $(-1)v = -v, \quad \forall v \in V$
+			\item $a0 = 0, \quad \forall a \in \mathbb{F}$
+		\end{itemize}
+	\end{thm}
+	
+	\begin{thm}
+		Suppose $V$ is a vector space over $\mathbb{F}$, and $a \in \mathbb{F}, \quad u,v \in V$
+		\begin{itemize}
+			\item If $av = 0$ then either $a = 0$ or $v = 0$
+			\item $a \not{=} 0$, if $au = av$ then $u=v$
+			\item $u \not{=} 0$, if $au = bu$ then $a=b$
+		\end{itemize}
+	\end{thm}
+	
+	\subsection{Set of functions}
+	For two sets $X$ and $Y$, the set of functions (mappings) from $X$ to $Y$ is denoted by $Y^X$. If $X$ and $Y$ are finite sets with
+	$n$ and $m$ elements, then size of $Y^X$, is exactly $m^n$.
 	
 \section{Subspaces}
+
+	\subsection{Vector subspaces}
+	\begin{defn}
+		Let $V$ be a vector space defined over the field of scalars $\mathbb{F}$ and $U \subset V$, $U$ is subspace if it is a vector space over $\mathbb{F}$ for the operations inherited from $V$. 
+		To be a subspace $U$ must
+		\begin{itemize}
+			\item Contain the zero vector 0
+			\item Closed with respect to addition
+			\item Closed with respect to multiplication
+			\item Closed with respect to taking negative vectors
+		\end{itemize}
+	\end{defn}
+	
+	\begin{thm}
+		A nonempty subset $U$ of a vector space $V$ is a subspace if and only if $U$ is closed with respect to addition and scalar multiplication.
+	\end{thm}
+	
+	\subsection{Intersection of subspaces}
+	\begin{thm}
+		If $\{ U_i | i \in I\}$ is a collection of subspaces of a vector space $V$ then the intersection of $W := \cup_{i \in I} U_i$ is again a subspace of $V$.
+	\end{thm}
+
 \section{Bases and dimension}
 \section{Linear mappings}
 \section{Isomorphisms}
