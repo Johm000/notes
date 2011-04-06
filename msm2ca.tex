@@ -112,7 +112,7 @@
 		Let $V$ be a vector space defined over the field of scalars $\mathbb{F}$ and $U \subset V$, $U$ is subspace if it is a vector space over $\mathbb{F}$ for the operations inherited from $V$. 
 		To be a subspace $U$ must
 		\begin{itemize}
-			\item Contain the zero vector 0
+			\item Contain the zero vector $0$
 			\item Closed with respect to addition
 			\item Closed with respect to multiplication
 			\item Closed with respect to taking negative vectors
@@ -135,10 +135,23 @@
 	
 	\subsection{Linear combinations}
 	\begin{defn}
-		
+		A linear combination of the vectors from $X$ is an expression of the form $w = \sum_{i \in I} a_i u_i$ where $a_i \in \mathbb{F}$ (scalars) and $u_i \in X$ (vectors).
+		If the set $X$ is infinite, them only finitely many $a_i$ are allowed to be nonzero. $w$ will of course be a vector, referred to as a linear combination of the $u_i$'s.
 	\end{defn}
+	
+	\subsection{Subspace spanned by vectors}
+	\begin{thm}
+		Suppose $V$ is a vector space over $\mathbb{F}$, and $X = \{ u_i | i \in I \}$ is a set of vectors in $V$. Then $W=\left< X \right>$ consists of all vectors $w$ that are linear
+		combinations of the vectors from $X$.
+	\end{thm}
+	
+	\subsection{Is a vector in the subspace?}
+	From above theorem, to check a given vector is contained in the subspace $W=\left< X \right>$, just check $w$ is a linear combination of the vectors $u_i$ from $X$.
 
 \section{Bases and dimension}
+	\begin{defn}
+	\end{defn}
+
 \section{Linear mappings}
 \section{Isomorphisms}
 \section{Matrix of linear mapping}
