@@ -27,7 +27,7 @@
 	\[
 		x \otimes y := xy mod p
 	\]
-	Subtration and division are subsituted with addition and multiplication:
+	Subtraction and division are substituted with addition and multiplication:
 	\[
 		x - y := x + (-y),
 	\]
@@ -36,7 +36,7 @@
 	\]
 	
 	\subsubsection{Operations for $\mathbb{F}_4$}
-	For any finite field you can use precomupted addition/multiplication tables.
+	For any finite field you can use precomputed addition/multiplication tables.
 	\[
 		\begin{array}{c | c c c c}
 			+ & 0 & 1 & a & b \\
@@ -60,11 +60,12 @@
 
 \section{Vector Spaces}
 	\begin{defn}
-		A vector space over the field of scalars $\mathbb{F}_4$ is a set $V$, whose elements are vectors, together with two binary operations addition and multiplication. The following axioms hold for addition
+		A vector space over the field of scalars $\mathbb{F}_4$ is a set $V$, whose elements are 
+		vectors, together with two binary operations addition and multiplication. The following axioms hold for addition
 		\begin{itemize}
 			\item Associative: $\forall u,v,w \in V, \quad u + ( v + w ) = (u + v) + w$
-			\item Existance of zero element: $\forall u \in V, \quad \exists 0 \in V$ such that $u + 0 = u$
-			\item Existance of inverse element: $\forall u \in V, \quad \exists (-u) \in V$ such that $u + (-u) = 0$
+			\item Existence of zero element: $\forall u \in V, \quad \exists 0 \in V$ such that $u + 0 = u$
+			\item Existence of inverse element: $\forall u \in V, \quad \exists (-u) \in V$ such that $u + (-u) = 0$
 			\item Commutative: $\forall u,v \in V, \quad u + v = v + u$
 		\end{itemize}
 		And the axioms for multiplication are
@@ -77,7 +78,7 @@
 					\[
 						(a+b)v = av + bv
 					\]
-			\item Existance of identity element: $1v = v \forall v \in V$
+			\item Existence of identity element: $1v = v \forall v \in V$
 		\end{itemize}
 	\end{defn}
 	
@@ -109,7 +110,8 @@
 
 	\subsection{Vector subspaces}
 	\begin{defn}
-		Let $V$ be a vector space defined over the field of scalars $\mathbb{F}$ and $U \subset V$, $U$ is subspace if it is a vector space over $\mathbb{F}$ for the operations inherited from $V$. 
+		Let $V$ be a vector space defined over the field of scalars $\mathbb{F}$ and $U \subset V$, $U$ 
+		is subspace if it is a vector space over $\mathbb{F}$ for the operations inherited from $V$. 
 		To be a subspace $U$ must
 		\begin{itemize}
 			\item Contain the zero vector $0$
@@ -120,7 +122,7 @@
 	\end{defn}
 	
 	\begin{thm}
-		A nonempty subset $U$ of a vector space $V$ is a subspace if and only if $U$ is closed with respect to addition and scalar multiplication.
+		A non-empty subset $U$ of a vector space $V$ is a subspace if and only if $U$ is closed with respect to addition and scalar multiplication.
 	\end{thm}
 	
 	\subsection{Intersection of subspaces}
@@ -130,27 +132,78 @@
 	
 	\subsection{Subspace spanned by a set of vectors}
 	\begin{thm}
-		Suppose $X$ is a set of vectors from a vector space $V$. The subspace spanned by $X$ is the smallest subspace $W$ of $V$ containing $X$. We write that $W = \left< X \right>$.
+		Suppose $X$ is a set of vectors from a vector space $V$. The subspace spanned by $X$ is the smallest 
+		subspace $W$ of $V$ containing $X$. We write that $W = \left< X \right>$.
 	\end{thm}
 	
 	\subsection{Linear combinations}
 	\begin{defn}
-		A linear combination of the vectors from $X$ is an expression of the form $w = \sum_{i \in I} a_i u_i$ where $a_i \in \mathbb{F}$ (scalars) and $u_i \in X$ (vectors).
-		If the set $X$ is infinite, them only finitely many $a_i$ are allowed to be nonzero. $w$ will of course be a vector, referred to as a linear combination of the $u_i$'s.
+		A linear combination of the vectors from $X$ is an expression of the form $w = \sum_{i \in I} a_i u_i$ 
+		where $a_i \in \mathbb{F}$ (scalars) and $u_i \in X$ (vectors).	If the set $X$ is infinite, them only 
+		finitely many $a_i$ are allowed to be non-zero. $w$ will of course be a vector, referred to as a linear 
+		combination of the $u_i$'s.
 	\end{defn}
 	
 	\subsection{Subspace spanned by vectors}
 	\begin{thm}
-		Suppose $V$ is a vector space over $\mathbb{F}$, and $X = \{ u_i | i \in I \}$ is a set of vectors in $V$. Then $W=\left< X \right>$ consists of all vectors $w$ that are linear
-		combinations of the vectors from $X$.
+		Suppose $V$ is a vector space over $\mathbb{F}$, and $X = \{ u_i | i \in I \}$ is a set of vectors 
+		in $V$. Then $W=\left< X \right>$ consists of all vectors $w$ that are linear combinations of the vectors from $X$.
 	\end{thm}
 	
 	\subsection{Is a vector in the subspace?}
-	From above theorem, to check a given vector is contained in the subspace $W=\left< X \right>$, just check $w$ is a linear combination of the vectors $u_i$ from $X$.
+	From above theorem, to check a given vector is contained in the subspace $W=\left< X \right>$, just check $w$ is a 
+	linear combination of the vectors $u_i$ from $X$.
 
 \section{Bases and dimension}
+	\subsection{Linear independence}
 	\begin{defn}
+		If a non-zero linear combinatino of the vector from $X$ adds up to the zero vector then we say that $X$ is a linearly dependent set of vectors.
 	\end{defn}
+	Similarly,
+	\begin{defn}
+		The set $X$ is linearly independent if no nonzero linear combination of the vectors from $X$ sums to the zero vector.
+	\end{defn}
+	
+	\subsection{Bases}
+	\begin{defn}
+		A basis of $V$ is a linearly indepedent spanning set for $V$.
+	\end{defn}
+	
+	\subsection{Minimal spanning sets}
+	\begin{thm}
+		Suppose $X$ and $Y$ are subsets of a vector space $V$ and that $Y \subseteq X$. Then $<X> \subseteq <Y>$.
+	\end{thm}
+	
+	\begin{thm}
+		A set of vectors $X$ is a minimal spanning set for $U = <X>$ if and only if $X$ is linearly independent.
+	\end{thm}
+	
+	\subsection{Bases always exist}
+	\begin{thm}
+		If $V$ is a vector space then $V$ contains at least one basis.
+	\end{thm}
+	
+	\subsection{Size of a linearly independent set}
+	\begin{thm}
+		If a vector space $V$ has a finite basis of size $n$ then every linearly independent set of vectors in $V$ has a size at most $n$.
+	\end{thm}
+	
+	\subsection{Dimension}
+	\begin{crl}
+		If $V$ has a finite spanning set then every basis in $V$ has the same finite size.
+	\end{crl}
+	
+	\begin{defn}
+		The dimension of a vector space $V$ is the size of an arbitrary basis in it.
+	\end{defn}
+	Note, we say $V$ is finite/infinitely dimensional depending on whether the size of the basis is finite/infinite.
+	
+	\begin{thm}
+		A given set of $n$ vectors $v_1, v_2, ..., v_n$ from $\mathbb{F}^n$ is a basis if and only if the square matrix ($n \times n$) with rows $v_i$ has a non-zero determinant.
+	\end{thm}
+	
+	\subsection{Coordinates}
+	
 
 \section{Linear mappings}
 \section{Isomorphisms}
