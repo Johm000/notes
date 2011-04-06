@@ -14,13 +14,13 @@
 \section{Assumed Knowledge}
 	\subsection{Intervals}
 		\begin{defn}
-			An interval is a subset of $\mathbb{R}$ taking one of the following forms, where $a$ and $b$ are arbitrary real numbers and $a < b$.
+			An interval is a subset of $\mathbb{R}$ taking one of the following forms, where ${a}$ and ${b}$ 					are arbitrary real numbers and ${a}$ < ${b}$:
 
 			\begin{itemize}
-				\item $(a,b) := \{x \in \mathbb{R}: a < x < b\}$ (this is called an open interval)
+				\item $(a,b) := \{x \in \mathbb{R}: a < x < b\}$		(this is called an open interval)
 				\item $(a,b] := \{x \in \mathbb{R}: a < x \leq b\}$	
 				\item $[a,b) := \{x \in \mathbb{R}: a \leq x < b\}$		
-				\item $[a,b] := \{x \in \mathbb{R}: a \leq x \leq b\}$ (this is called a closed interval)
+				\item $[a,b] := \{x \in \mathbb{R}: a \leq x \leq b\}$		(this is called a closed interval)
 				\item $(a,\infty) := \{x \in \mathbb{R}: x > a\}$		
 				\item $[a,\infty) := \{x \in \mathbb{R}: x \geq a\}$		
 				\item $(-\infty,b) := \{x \in \mathbb{R}: x < b\}$		
@@ -28,8 +28,426 @@
 				\item $(-\infty, \infty) := \mathbb{R}$
 				\item The interval $(0, \infty)$ will also be denoted by $\mathbb{R}^+$.
 			\end{itemize}
+		\end{defn}
+
+	\subsection{Functions}
+		\begin{defn}
+			Suppose that X $\subseteq \mathbb{R}$. A real function $f : X \to \mathbb{R}$ is a a rule which assigns to 				every real number $x \in X$ a unique real number $y \in \mathbb{R}$. If this number $y \in 						\mathbb{R}$ corresponds to the number $x \in \mathbb{R}$, then we write $y = f(x)$.
+		\end{defn}
+
+		\begin{defn}
+			The set X where $f$ is defined is called the domain of $f$. We call the set $f(X) = \{f(x) : x \in X\}$ the 						image or range or image of $f$. The graph of $f$ is defined to be
+							\[
+							\{(x, f(x)) \in \mathbb{R}^2 : x \in X\}
+							\]
 
 		\end{defn}
+
+		\subsubsection{Behaviour of Functions at Inifinity}
+			\begin{defn}
+				Suppose that $f$ is a real function. Then we say that "$f(x)$ tends to infinity as $x$ tends to 							infinity" and we write $f(x) \to \infty$ as $x \to \infty$ or $lim_{x \to \infty} f(x) = \infty$, 						if, given any A in $\mathbb{R}^+$, $\exists$ K in $\mathbb{R}$ (which may depend on A) 						such that
+					\[
+						f(x) > A \mbox{    whenever    } x > K.
+					\]			
+
+			\end{defn}
+
+			\begin{defn}
+				Suppose that $f$ is a real function. Then we say that "$f(x)$ tends to minus infinity as $x$ tends to 					infinity" and we write $f(x) \to -\infty$ as $x \to \infty$ or $\lim_{x \to \infty} f(x) = 							-\infty$, if, given any A in $\mathbb{R}^+$, $\exists$ K in $\mathbb{R}$ (which may 							depend on A) such that
+					\[
+						f(x) < -A \mbox{    whenever    } x > K.
+					\]
+
+				It then follows that "f(x) $\to -\infty$ as $x \to \infty$" is logically equivalent to the statement "-f(x) 					$\to -\infty$ as $x \to \infty$"
+			\end{defn}
+
+			{\bf{Remark}} : Note that $|y - \ell| < \epsilon$   if and only if   $\ell - \epsilon < y < \ell + \epsilon$.
+
+			\begin{defn}
+				Let $f$ be a real function and $\ell \in \mathbb{R}$. Then we say "f(x) tends to $\ell$ as x tends to 					infinity", and we write $f(x) \to \ell$ as $x \to \infty$, or $\lim_{x \to \infty} = \ell$, if, given any 					$\epsilon$ in $\mathbb{R}^+$, $\exists$ K in $\mathbb{R}$ (which may depend on $\epsilon$) such 					that
+						\[
+							|f(x) - \ell| < \epsilon \mbox{    whenever    } x > K.
+						\]
+
+				In other words, this means that we can ensure |$f(x) - /ell$| remains smaller than any prescribed 					positive real number, provided we take x sufficiently large.
+			\end{defn}
+
+			{\bf{Remark}} : We say such an $\ell$ exists if the limit is defined. If $f(x) \to \infty$ as $x \to \infty$, 							then we say the limit does not exist.
+
+			\begin{thm}
+				Suppose that $f(x) \to \infty$ as $x \to \infty$. Then
+						\[
+							\lim_{x \to \infty}{\frac{1}{f(x)}} = 0
+						\]
+			\end{thm}
+
+			We can now link the ideas in definitions 4, 5 and 6 to produce a definition for what happens when x goes to 				minus infinity.
+
+			\begin{defn}
+				Let $f$ be a real function and $\ell \in \mathbb{R}$. Then
+				\begin{enumerate}
+					\item $f(x) \to \infty$ as $x \to -\infty$, if, given any A in $\mathbb{R}^+$, $\exists$ K in 							$\mathbb{R}$ (which may depend on A) such that
+								\[
+									f(x) > A \mbox{    whenever    } x < K.
+								\]
+					\item $f(x) \to -\infty$ as $x \to -\infty$, if, given any A in $\mathbb{R}^+$, $\exists$ K in 							$\mathbb{R}$ (which may depend on A) such that
+								\[
+									f(x) < -A \mbox{    whenever    } x < K.
+								\]			
+					\item $f(x) \to \ell$ as $x \to -\infty$, if, given any $\epsilon$ in $\mathbb{R}^+$, $\exists$ 						K in $\mathbb{R}$ (which may depend on $\epsilon$) such that
+						\[
+							|f(x) - \ell| < \epsilon \mbox{    whenever    } x < K.
+						\]
+				\end{enumerate}
+			\end{defn}
+
+		\subsubsection{Limits}
+			\begin{thm}
+				(Algebra of Limits) Suppose that
+					\[
+						\lim_{x \to \infty}{f(x)} = \ell     \mbox{     and     }     \lim_{x \to \infty}{g(x)} = m
+					\]
+				where $\ell, m \in \mathbb{R}$. Then the following statements hold:
+					\begin{enumerate}
+						\item $\lim_{x \to \infty}{(f(x) + g(x))} = \ell + m$;
+						\item $\lim_{x \to \infty}{(f(x) - g(x))} = \ell - m$;
+						\item $\lim_{x \to \infty}{(f(x)g(x))} = \ell m$;
+
+				And, if we also suppose that $m \neq 0$, then
+
+						\item $\lim_{x \to \infty}{\frac{f(x)}{g(x)}} = \frac{\ell}{m}$;
+					\end{enumerate}
+
+				Analogous statements hold for limits as $x \to -\infty$.
+			\end{thm}
+
+			\begin{thm}
+				(Sandwich Theorem) Let f, g and h be real functions defined on (R, $\infty$) for some R $\in 						\mathbb{R}$. Suppose that
+						\[
+							f(x) \leq g(x) \leq h(x)
+						\]
+				for all $x \in (R, \infty)$ and
+						\[
+							\lim_{x \to \infty}{f(x)} = \ell \mbox{    and    } \lim_{x \to \infty}{h(x)} = \ell
+						\]
+				Then $\lim_{x \to \infty}{g(x)} = \ell$.
+
+				An analogous statement is true for limite as $x \to -\infty$.
+			\end{thm}
+
+			\begin{defn}
+				(Right-Hand Limit) Suppose that f is defined on ($a$, $a$ + R) for some $R \in \mathbb{R}^+$. 							Then we say "f(x) tends to $\ell$ as $x$ tends to $a$ from above" if, given any $\epsilon$ in 					$\mathbb{R}^+$, $\exists \delta$ in $\mathbb{R}^+$ such that
+					\[
+						|f(x) - \ell| < \epsilon \mbox {    whenever    } a < x < a + \delta.
+					\]
+
+				In symbols, we write $f(x) \to \ell$ as $x \to a+$, or
+					\[
+						\lim_{x \to a+}{f(x)} = \ell
+					\]
+
+				The symbol $a+$ indicates that the limit is taken from the right, or from above.
+			\end{defn} 
+
+			\begin{defn}
+				(Left-Hand Limit) Suppose that f is defined on ($a$ - R, $a$) for some $R \in \mathbb{R}^+$. Then 					we say "f(x) tends to $\ell$ as $x$ tends to $a$ from below" if, given any $\epsilon$ in 							$\mathbb{R}^+$, $\exists \delta$ in $\mathbb{R}^+$ such that
+					\[
+						|f(x) - \ell| < \epsilon \mbox {    whenever    } a - \delta < x < a.
+					\]
+
+				In symbols, we write $f(x) \to \ell$ as $x \to a-$, or
+					\[
+						\lim_{x \to a-}{f(x)} = \ell
+					\]
+
+				The symbol $a-$ indicates that the limit is taken from the left, or from below.
+			\end{defn}
+
+			\begin{defn}
+				($\epsilon-\delta$ definition of a limit at a point) Suppose that f is defined on $(a - R, a) \cup (a, a + 					R)$, for some R $\in \mathbb{R}^+$. Then we say "f(x) tends to $\ell$ as $x$ tends to 							$a$" if, given any $\epsilon$ in $\mathbb{R}^+, \exists \delta$ in $\mathbb{R}^+$ such 						that
+					\[
+						|f(x) - \ell| < \epsilon \mbox{    whenever    } 0 < |x - a| < \delta
+					\]
+				Using symbols, we write f(x) $\to \ell$ as $x \to a$, or
+					\[
+						\lim_{x \to a}{f(x)} = \ell
+					\]
+			\end{defn}
+
+			{\bf{Remarks}} : 
+			\begin{enumerate}
+				\item The assumptions made for the last 3 definitions do not preclude the possibility that f is 						defined on a larger set than the set considered ($\mathbb{R}$). However, the conditions on 						$x$ strictly exclude the possibility that $x = a$. In particular, $\lim_{x \to a}{f(x)}$, 							if it exists, is independent of $f(a)$, and it does not matter whether $f(a)$ is defined.                    
+
+				\item Sometimes we call the set $\{x \in \mathbb{R} : 0 < |x - a| < \delta \}$ a punctured 							neighbourhood of a.
+
+				\item It follows from the definitions that $\lim_{x \to a}{f(x)} = \ell$ if and only if both $\lim_{x \to 						 a-}{f(x)} = \ell$ and $\lim_{x \to a+}{f(x)} = \ell$.
+
+				\item Quite often both  $\lim_{x \to a-}{f(x)}l$ and  $\lim_{x \to a+}{f(x)}$ exist, but are different. 						This is a common reason for  $\lim_{x \to a}{f(x)}$ to fail to exist.
+			\end{enumerate}
+
+			{\bf{Recall that}} if ($a_n$) is a sequence of real numbers that converges to a limit $a \in \mathbb{R}$, 							then we write
+				\[
+					\lim_{n \to \infty}{a_n} = a.
+				\]
+
+			\begin{thm}
+				(A theorem connecting sequences and functions - Theorem 4.6) Suppose that f is a real function, 						defined on (a - R, a) $\cup$ (a, a + R) for some R in $\mathbb{R}^+$. Then $\lim_{x \to a}						{f(x)} = \ell$ if and only if $\lim_{n \to \infty}{f(a_n)} = \ell$ for all sequences ($a_n$) such 						that $\lim_{n \to \infty}{a_n} = a$ and $a_n \neq a$ for all $n \in \mathbb{N}$.
+			\end{thm}
+
+			Then, it follows that we can use the Algebra of Limits and the Sandwich Theorem on limits to a point as 						opposed to functions that tend to infinity only.					
+
+			\begin{thm}
+				(Algebra of Limits) Suppose that f and g are real functions, whose domains both include a set of the 						form (a - R, a) $\cup$ (a, a + R) for some R in $\mathbb{R}^+$. Suppose also that
+					\[
+						\lim_{x \to a}{f(x)} = \ell     \mbox{     and     }     \lim_{x \to a}{g(x)} = m
+					\]
+				where $\ell, m \in \mathbb{R}$. Then the following statements hold:
+					\begin{enumerate}
+						\item $\lim_{x \to a}{(f(x) + g(x))} = \ell + m$;
+						\item $\lim_{x \to a}{(f(x) - g(x))} = \ell - m$;
+						\item $\lim_{x \to a}{(f(x)g(x))} = \ell m$;
+
+				And, if we also suppose that $m \neq 0$, then
+
+						\item $\lim_{x \to a}{\frac{f(x)}{g(x)}} = \frac{\ell}{m}$;
+					\end{enumerate}
+			\end{thm}
+
+			\begin{thm}
+				(Sandwich Theorem) Suppose that f, g and h are real functions, whose domains all include a set of 						the form (a - R, a) $\cup$ (a, a + R) for some R in $\mathbb{R}^+$. Suppose also that
+						\[
+							f(x) \leq g(x) \leq h(x)
+						\]
+				for all $x \in (a - R, a) \cup (a, a + R))$ and
+						\[
+							\lim_{x \to a}{f(x)} = \ell \mbox{    and    } \lim_{x \to a}{h(x)} = \ell
+						\]
+				Then 
+						\[
+							\lim_{x \to a}{g(x)} = \ell.
+						\]
+			\end{thm}
+
+		\subsubsection{Fundamental Trigonometric Limits}
+
+			{\bf{Remark}}	The $\epsilon-\delta$ definition of a limit can be used to prove that if a, b, c $\in 							\mathbb{R}$ and b $\neq 0$, then
+						\[
+						\lim_{x \to a}{f(bx)} = \lim_{x \to ba}{f(x)}
+						\]			
+				and
+						\[
+						\lim_{x \to a}{f(x + c)} = \lim_{x \to a + c}{f(x)}
+						\]
+
+			{\bf{Important Note}} Unless a question specifically requires the computation of these limits, they are 						standard results and may be used as such. In all of them, $a, b, c \in \mathbb{R}, b \neq 0$, and 					$n \in \mathbb{N}$:
+					\begin{enumerate}
+						\item $\lim_{x \to a}{x^n} = a^n$
+						\item $\lim_{x \to a}{f(bx + c)} = \lim_{x \to ab + c}{f(x)}$ (follows from remark 									above)
+						\item $\lim_{x \to 0}{\cos x} = 1$
+						\item $\lim_{x \to 0}{\sin x} = 1$
+						\item $\lim_{x \to 0}{\frac{\sin x}{x}} = 1$
+					\end{enumerate}
+
+		\subsubsection{Continuity}
+
+			\begin{defn}
+				(Continuity at a point) Let $f : X \to \mathbb{R}$ be a real function, and suppose that $a \in X$. 							Then $f$ is continuous at $a$ if, given any $\epsilon \in \mathbb{R}^+, \exists \delta \in 							\mathbb{R}^+$ such that
+						\[
+							|f(x) - f(a)| < \epsilon \mbox{    whenever    } x \in X \mbox {    and    } 										|x - a| < \delta.
+						\]
+			\end{defn}
+
+			{\bf{Remarks}} :
+					\begin{enumerate}
+						\item If f($x$) is defined for all $x$ in a neighbourhood of a, that is, $(a - R, a + R) 								\subseteq X$ for some $R \in \mathbb{R}^+$, then $f$ is continuous at 									$a$ if and only if
+							\[
+								\lim_{x \to a}{f(x)} = f(a)
+							\] 
+						\item If $f$ is defined on an interval $[a,b]$, where $a,b \in \mathbb{R}$, then $f$ 								is continuous at the endpoint $a$ if and only if
+							\[
+								\lim_{x \to a+}{f(x)} = f(a)
+							\] 
+							similarly, $f$ is continuous at $b$ if and only if
+							\[
+								\lim_{x \to b-}{f(x)} = f(b)
+							\] 
+						\item If $f(a)$ is defined, but $f(x)$ is not defined for any other $x$ in (a - R, a + R) 							for some $R \in \mathbb{R}^+$, then $f$ is continuous at a.
+					\end{enumerate}
+
+			\begin{defn}
+				(Continuity) Let $f : X \to \mathbb{R}$ be a real function. Then $f$ is continuous if $f$ is 								continuous at every point of X.
+			\end{defn}
+
+			{\bf{Remark}}: A function $f : [a,b] \to \mathbb{R}$ is continuous if and only if
+							\[
+								\lim_{x \to c}{f(x)} = f(c) \mbox {   for all   } c \in [a,b]
+							\] 
+						and
+							\[
+								\lim_{x \to a+}{f(x)} = f(a)  \mbox{    and    } \lim_{x \to b-}{f(x)} = 									 f(b)
+							\] 
+			
+			\begin{thm}
+			(Algebra of Continuous Functions) Suppose that $f : X \to \mathbb{R}$ and $g : X \to \mathbb{R}$ are 						continuous at a point $a \in X$. Then the following statements hold:
+				\begin{enumerate}
+					\item $f + g$ is continuous at $a$;
+					\item $f - g$ is continuous at $a$;
+					\item $fg$ is continuous at $a$;
+
+				And, if we also suppose that $g(a) \neq 0$, then
+
+					\item $\frac{f}{g}$ is continuous at $a$;
+				\end{enumerate}
+			\end{thm}
+
+			\begin{thm}
+				(Corollary to above) Suppose that $f : X \to \mathbb{R}$ and $g : X \to \mathbb{R}$ are 							continuous. Then the following statements hold:
+				\begin{enumerate}
+					\item $f + g$ is continuous;
+					\item $f - g$ is continuous;
+					\item $fg$ is continuous;
+
+				And, if we also suppose that $g(x) \neq 0$ for all $x \in X$, then
+
+					\item $\frac{f}{g}$ is continuous;
+				\end{enumerate}
+			\end{thm}
+
+			\begin{defn}
+				Suppose that $f : X \to Y$ and $g : Y \to Z$ are functions. Then the composed function or 							composition $g \circ f : X \to Z$ is defined by
+					\[
+						g \circ f(x) = g(f(x)) \mbox{   for all    } x \in X.
+					\]
+			\end{defn}
+
+			\begin{thm}
+				(Functions composed of continuous functions are continuous) Suppose that $f : X \to Y$ and $f : Y 						\to Z$ are functions, that $f$ is continuous at a point $a \in X$ and that $g$ is continuous at 					the point $f(a) \in Y$. Then the composed function $g \circ f : X \to Z$ is continuous at $a$.
+
+				Similarly, as a corollary, if X and Y are intervals, and if $f : X \to Y$ and $f : Y \to \mathbb{R}$ are 						continuous functions. Then the composed function $g \circ f : X \to \mathbb{R}$ is 							continuous.
+			\end{thm}
+		
+		\subsubsection{The Intermediate Value Theorem}
+
+			\begin{lemma}
+				Suppose that $f : [a,b] \to \mathbb{R}$ is continuous and $\lambda \in \mathbb{R}$. If $f(w) > 							\lambda$ for some $w \in [a,b]$, then $\exists \delta$ in $\mathbb{R}^+$ such that
+					\[
+						f(x) > \lambda \mbox{   whenever   } x \in [a,b] \mbox{   and   } |x-w| < \delta
+					\]
+				The analogous result holds if the inequality signs > are replaced by <.
+			\end{lemma}
+
+			\begin{lemma}
+				Suppose that $f : [a,b] \to \mathbb{R}$ is continuous and $\lambda \in \mathbb{R}$. If $f(x) \geq 							\lambda$ for all $x \in (a,b)$, then
+					\[
+						f(a) \geq \lambda \mbox{   and   } f(b) \geq \lambda
+					\]
+				The same holds if the inequality signs $\geq$ are replaced by $\leq$.
+			\end{lemma}
+
+			\begin{thm}
+				(The Intermediate Value Theorem) Suppose that $f : [a,b] \to \mathbb{R}$ is continuous, that $f(a) 					\neq f(b)$, and that $\lambda$ lies strictly between $f(a)$ and $f(b)$. Then there exists 							$c$ in $(a,b)$ such that
+					\[
+						f(c) = \lambda
+					\]
+			\end{thm}
+
+			{\bf{Remark}} : The continuity hypothesis in the statement of the IVT is essential.
+
+			\begin{thm}
+				(Fixed Point Theorem) If $f : [a,b] \to [a,b]$ is continuous, then $\exists c \in [a,b]$ such that $f(c) 					= c$.
+			\end{thm}
+
+		\subsubsection{Continuous Functions on Closed Bounded Intervals}
+			
+			{\bf{Remarks}} : In MSM1B, we stated in proved the following theorems:
+				\begin{enumerate}
+					\item
+						\begin{thm}
+							(Least Upper Bound Axiom) Any bounded set X of real numbers has a least 									upper bound.
+						\end{thm}
+					\item
+						\begin{thm}
+							(Monotone Convergence Theorem) Any monotone bounded sequence 										$\{x_n\}$ of real numbers is convergent.
+						\end{thm}
+					\item
+						\begin{thm}
+							(Bolzano-Weierstrass) Any bounded sequence $\{x_n\}$ of real numbers has 								 a convergent subsequence.
+						\end{thm}
+				\end{enumerate}
+
+			\begin{defn}
+				A function $f : X \to \mathbb{R}$ is bounded if there is a number $R \in \mathbb{R}^+$ such that
+					\[
+						|f(x)| \leq R \mbox{   for all   } x \in X.
+					\]
+			\end{defn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
 
